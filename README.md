@@ -60,6 +60,8 @@ Easily start your Reactive RESTful Web Services
 
 https://quarkus.io/get-started/
 
+https://quarkus.io/guides/hibernate-orm
+
 mvnw package -Dnative -Dquarkus.native.container-build=true
 
 mvnw package -Pnative -Dquarkus.native.container-build=true -Dquarkus.container-image.build=true                          
