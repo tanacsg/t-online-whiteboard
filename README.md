@@ -68,4 +68,8 @@ mvnw package -Pnative -Dquarkus.native.container-build=true -Dquarkus.container-
 
 docker build -f src/main/docker/Dockerfile.native -t tanacsg/t-online-whiteboard .
 
-docker run -i --rm -p 8080:8080 tanacsg/t-online-whiteboard
+
+docker run -e POSTGRES_PASSWORD=whiteboard -e POSTGRES_USER=whiteboard -p 5432:5432 postgres
+docker run -i --rm --pull=always -p 8080:8080 tanacsg/t-online-whiteboard:latest
+
+docker-compose up
