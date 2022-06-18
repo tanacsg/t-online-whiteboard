@@ -73,3 +73,6 @@ docker run -e POSTGRES_PASSWORD=whiteboard -e POSTGRES_USER=whiteboard -p 5432:5
 docker run -i --rm --pull=always -p 8080:8080 tanacsg/t-online-whiteboard:latest
 
 docker-compose up
+
+
+https://www.coding-daddy.xyz/node/47
