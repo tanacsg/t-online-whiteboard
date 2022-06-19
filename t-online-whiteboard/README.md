@@ -46,3 +46,12 @@ npm run test:e2e # or `npm run test:e2e:ci` for headless testing
 ```sh
 npm run lint
 ```
+
+### Tips
+
+```sh
+npm run dev -- --host
+
+npm run build
+cp -R dist/* ../src/main/resources/META-INF/resources/
+```
