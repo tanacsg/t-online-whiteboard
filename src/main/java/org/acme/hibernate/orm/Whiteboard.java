@@ -1,11 +1,14 @@
 package org.acme.hibernate.orm;
 
+import java.util.List;
+
 import javax.persistence.Cacheable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.QueryHint;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -26,6 +29,9 @@ public class Whiteboard {
 
     @Column(length = 50, unique = true)
     private String businessId;
+
+    @OneToMany(mappedBy = "whiteboard")
+    private List<Note> notes;
 
     public Whiteboard() {
     }
@@ -56,6 +62,14 @@ public class Whiteboard {
 
     public void setBusinessId(String businessId) {
         this.businessId = businessId;
+    }
+
+    public List<Note> getNotes() {
+        return notes;
+    }
+
+    public void setNotes(List<Note> notes) {
+        this.notes = notes;
     }
 
 }

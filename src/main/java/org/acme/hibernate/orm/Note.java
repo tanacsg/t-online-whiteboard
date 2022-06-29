@@ -5,10 +5,14 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
 import javax.persistence.QueryHint;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "note")
@@ -32,6 +36,11 @@ public class Note {
 
     @Column
     private int y;
+
+    @ManyToOne
+    @JoinColumn(name="whiteboard_id")
+    @JsonIgnore
+    private Whiteboard whiteboard;
 
     public Note() {
     }
@@ -78,6 +87,14 @@ public class Note {
 
     public void setY(int y) {
         this.y = y;
+    }
+
+    public Whiteboard getWhiteboard() {
+        return whiteboard;
+    }
+
+    public void setWhiteboard(Whiteboard whiteboard) {
+        this.whiteboard = whiteboard;
     }
 
 }
